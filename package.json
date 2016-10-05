@@ -1,0 +1,22 @@
+{
+  "author": "neme <neme@whispered.se>",
+  "name": "sw",
+  "version": "1.0.0",
+  "description": "Serviceworker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch index.js --watch days -e html,js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "good": "^7.0.2",
+    "good-console": "^6.1.2",
+    "good-squeeze": "^5.0.0",
+    "handlebars": "^4.0.5",
+    "hapi": "^15.1.0",
+    "inert": "^4.0.2",
+    "nodemon": "^1.10.2",
+    "vision": "^4.1.0"
+  },
+  "devDependencies": {}
+}
