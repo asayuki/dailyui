@@ -1,32 +1,26 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="/static/001/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
     <title>001 - Sign Up</title>
   </head>
   <body>
-
-    <div class="signup-form">
-      <form method="post" action="">
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div class="form-row">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <div class="form-row">
-          <label for="cpassword">Confirm password</label>
-          <input type="password" name="cpassword" id="cpassword" />
-        </div>
-        <div class="form-row">
-          <button>Sign up</button>
-        </div>
+    <header>
+      <a href="#">Login</a>
+      <a href="#" class="active">Sign Up</a>
+    </header>
+    <section class="login">
+      <form method="" action="" class="the-form">
+        <p class="form-row">
+          <i class="icon-envelope"></i>
+          <input type="email" name="email" placeholder="email">
+        </p>
+        <p class="form-row">
+          <i class="icon-lock"></i>
+          <input type="password" name="password" placeholder="password">
+        </p>
+        <button>Sign Up</button>
       </form>
-    </div>
-
-    <p class="but-wait fn-but-wait">But wait! <a href="#">I already have an account</a>, i think.
-
+    </section>
   </body>
 </html>
