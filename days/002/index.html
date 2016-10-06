@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/002/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <title>002 - Credit Card Checkout</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-information left-side">
+        <header class="card-row">
+          <i class="icon-visa"></i>
+        </header>
+
+        <div class="card-row">
+          <span class="sub-title">Total</span>
+          <span class="price">$1.337,<span class="trailing-price">99</span>
+        </div>
+
+        <div class="card-row">
+          <label class="sub-title" for="name">Name on card</label>
+          <input type="text" name="name" id="name" placeholder="Jane Doe">
+        </div>
+      </div>
+
+      <div class="card-information right-side">
+        <div class="card-row">
+          <label class="sub-title">Expiration Date</label>
+          <div class="select-group">
+            <select class="month">
+              <option value="january">January</option>
+              <option value="january">February</option>
+              <option value="january">Mars</option>
+              <option value="january">April</option>
+              <option value="january">May</option>
+              <option value="january">June</option>
+              <option value="january">July</option>
+              <option value="january">August</option>
+              <option value="january">September</option>
+              <option value="january">October</option>
+              <option value="january">November</option>
+              <option value="january">December</option>
+            </select>
+            <select class="year">
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-row">
+          <label class="sub-title" for="card-number">Card Number</label>
+          <input type="text" name="card-number" id="card-number" maxlength="19" placeholder="1234-5678-9101-1121">
+        </div>
+        <div class="card-row">
+          <label class="sub-title" for="cvc-code-1">CVC Code</label>
+          <div class="input-group cvc">
+            <input type="text" maxlength="1" id="cvc-code-1" placeholder="1">
+            <input type="text" maxlength="1" id="cvc-code-2" placeholder="3">
+            <input type="text" maxlength="1" id="cvc-code-3" placeholder="7">
+          </div>
+        </div>
+
+        <button class="checkout">Checkout</button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+      // Card number
+      var cardNumber = document.querySelector('#card-number');
+      var cvc1 = document.querySelector('#cvc-code-1');
+      var cvc2 = document.querySelector('#cvc-code-2');
+      var cvc3 = document.querySelector('#cvc-code-3');
+      var checkoutBtn = document.querySelector('button.checkout');
+
+      cardNumber.addEventListener('keyup', function (e) {
+        var value = this.value;
+        var length = value.length;
+
+        if (length <= 19) {
+          var num = this.value.split('-').join('').trim();
+          if (num !== '') {
+            num = num.match(new RegExp('.{1,4}', 'g')).join("-");
+
+            if (num !== value) {
+              this.value = num;
+            }
+          }
+
+          if (num.length === 19) {
+            cvc1.focus();
+          }
+        }
+      });
+
+      cvc1.addEventListener('keyup', function (e) {
+        cvc2.focus();
+      });
+
+      cvc2.addEventListener('keyup', function (e) {
+        cvc3.focus();
+      });
+
+      cvc3.addEventListener('keyup', function (e) {
+        checkoutBtn.classList.add('comeonin');
+      });
+
+    </script>
+  </body>
+</html>
